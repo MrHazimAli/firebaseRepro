@@ -5,9 +5,8 @@ import MainHome from './TabNavigationStack';
 
 const RNApp = createStackNavigator(
   {
-    Launch: {
-      screen: Launch
-    }
+    Launch: { screen: Launch },
+    MainHome: MainHome
   },
   {
     initialRouteName: 'Launch',

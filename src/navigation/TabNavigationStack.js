@@ -1,3 +1,4 @@
+import React from 'react'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import Main from '../screens/Main';
 import More from '../screens/More';

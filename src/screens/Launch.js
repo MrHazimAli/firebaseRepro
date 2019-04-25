@@ -16,7 +16,8 @@ import * as CounterActions from '../actions/counter';
 @connect(
 	state => {
 		return ({
-			counter: state.counter.get('counter')
+			counter: state.counter.get('counter'),
+			profile: state.firebase.profile
 		})
 	},
 	dispatch => bindActionCreators(CounterActions, dispatch)
@@ -24,10 +25,19 @@ import * as CounterActions from '../actions/counter';
 class Launch extends Component {
 
 	componentDidMount() {
+
 		this.props.firebase.auth().onAuthStateChanged( user => {
     	if(user) {
-    		console.log('user ', user)
+    		console.log('user ', user, this.props.profile)
+
+    		setTimeout(() => {
+					this.props.navigation.replace('MainHome')
+				}, 1000)
+
     	} else {
+    		setTimeout(() => {
+					this.props.navigation.replace('MainHome')
+				}, 1000)
     		console.log('no user')
     	}
    	})

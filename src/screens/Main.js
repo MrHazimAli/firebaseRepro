@@ -4,7 +4,7 @@ import {
 	Text,
 	Image
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const tabBarIcon = name => ({ tintColor }) => (
 	<Icon name={name} size={24} color={tintColor} />
@@ -13,14 +13,14 @@ const tabBarIcon = name => ({ tintColor }) => (
 export default class Main extends Component {
 
 	static navigationOptions = {
-    tabBarIcon: 'ios-airplane',
+    tabBarIcon: tabBarIcon('ios-airplane'),
     title: 'Main'
   };
 
 	render() {
 		return (
 			<View>
-				<Text>Main</Text>
+				<Text>main</Text>
 			</View>
 		)
 	}
