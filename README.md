@@ -25,6 +25,13 @@ $ rm -rf .git
 
 # Install Dependencies
 $ yarn
+
+# Install Firebase Pod
+$ cd ios
+$ pod install
+
+# Run using workspace project
+
 ```
 
 ## Development
