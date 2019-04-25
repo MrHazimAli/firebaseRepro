@@ -28,6 +28,8 @@ class Launch extends Component {
 
 		this.props.firebase.auth().onAuthStateChanged( user => {
     	if(user) {
+
+    		// user profile is not updated here or inside redux store
     		console.log('user ', user, this.props.profile)
 
     		setTimeout(() => {
