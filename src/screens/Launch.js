@@ -7,10 +7,12 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { firebaseConnect } from 'react-redux-firebase';
 import { withNamespaces } from 'react-i18next';
 
 import * as CounterActions from '../actions/counter';
 
+@firebaseConnect()
 @connect(
 	state => {
 		return ({
@@ -20,6 +22,16 @@ import * as CounterActions from '../actions/counter';
 	dispatch => bindActionCreators(CounterActions, dispatch)
 )
 class Launch extends Component {
+
+	componentDidMount() {
+		this.props.firebase.auth().onAuthStateChanged( user => {
+    	if(user) {
+    		console.log('user ', user)
+    	} else {
+    		console.log('no user')
+    	}
+   	})
+	}
 
   render() {
 
